@@ -10,6 +10,9 @@ inject_into_file "Gemfile", before: "group :development, :test do" do
     gem "font-awesome-sass", "~> 6.1"
     gem "simple_form", github: "heartcombo/simple_form"
     gem "sassc-rails"
+    gem "elasticsearch", "<= 7.13" 
+    gem "searchkick"
+    gem 'pagy', '~> 6.1'
 
   RUBY
 end
@@ -66,7 +69,7 @@ end
 # README
 ########################################
 markdown_file_content = <<~MARKDOWN
-  Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+  Rails app template.
 MARKDOWN
 file "README.md", markdown_file_content, force: true
 
@@ -191,5 +194,5 @@ after_bundle do
   ########################################
   git :init
   git add: "."
-  git commit: "-m 'Initial commit with devise template from https://github.com/lewagon/rails-templates'"
+  git commit: "-m 'Initial commit with devise template'"
 end
